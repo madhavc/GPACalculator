@@ -4,18 +4,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    
-
     <RelativeLayout
-        android:layout_width="80dp"
-        android:layout_height="wrap_content" >
-        
-        <Button
-        android:id="@+id/add"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add" 
-        android:onClick= "addClass" />
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_weight="0.69" >
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addClass"
+            android:text="@string/course_name" />
+
+        <EditText
+            android:id="@+id/subjectName"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/addButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/addButton"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/addButton"
+            android:layout_below="@+id/addButton"
+            android:text="Button" />
 
     </RelativeLayout>
 

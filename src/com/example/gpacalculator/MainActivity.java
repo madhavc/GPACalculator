@@ -3,6 +3,7 @@ package com.example.gpacalculator;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,7 +13,21 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 public class MainActivity extends Activity implements View.OnClickListener{
+
+	
 	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+	
+	public void onClick(View view){
+		Intent i;
+		if(view.getId() == R.id.addButton){
+			i = new Intent(this, AddCourseActivity.class);
+			startActivity(i);
+		}
+	}
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -41,18 +56,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		}
 
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.activity_main, container,false);
 			return rootView;
 		}
 	}
 
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

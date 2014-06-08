@@ -18,8 +18,10 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="30sp"
+            android:clickable="true"
+            android:onClick="@string/add_course"
             android:text="@string/add_course" />
-        
+
     </RelativeLayout>
 
 </FrameLayout>
