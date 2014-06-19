@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class AddCourseActivity extends Activity implements View.OnClickListener{
 	
 	Button add, cancel;
-	
+	EditText course_text_name;
+	Course course = new Course();
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_course);
@@ -20,24 +22,23 @@ public class AddCourseActivity extends Activity implements View.OnClickListener{
 		if(v.getId() == R.id.cancelButton)
 			finish();
 		else if(v.getId() == R.id.addButton){
-			
+			if(course_text_name.getText().toString().length() == 0){
+				course_text_name.setError("Course Name is not entered!");
+			}
+			else {
+				course.course_name = course_text_name.getText().toString();
+			}
 		}
 	}
 	private void init() {
 		add = (Button)findViewById(R.id.addButton);
 		cancel = (Button)findViewById(R.id.cancelButton);
+		course_text_name = (EditText)findViewById(R.id.subjectName);
 		
 		add.setOnClickListener(this);
 		cancel.setOnClickListener(this);
+		course_text_name.setOnClickListener(this);
 		
 	}
 	
-	public void addCourse(View view){
-		if(view.getId() == R.id.addButton){
-			
-		}
-	}
-
-
-
 }
