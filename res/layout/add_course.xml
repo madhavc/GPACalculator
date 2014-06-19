@@ -11,30 +11,45 @@
         android:layout_weight="0.69" >
 
         <Button
-            android:id="@+id/addButton"
+            android:id="@+id/CourseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="addClass"
+            android:clickable="false"
             android:text="@string/course_name" />
 
         <EditText
             android:id="@+id/subjectName"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/addButton"
+            android:layout_alignBottom="@+id/CourseName"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/addButton"
-            android:ems="10" />
+            android:layout_toRightOf="@+id/CourseName"
+            android:ems="10"
+            android:singleLine="true" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignRight="@+id/addButton"
-            android:layout_below="@+id/addButton"
-            android:text="Button" />
+            android:layout_below="@+id/CourseName"
+            android:layout_marginTop="22dp"
+            android:layout_toLeftOf="@+id/subjectName"
+            android:clickable="true"
+            android:onClick="add"
+            android:text="@string/add" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/addButton"
+            android:layout_alignLeft="@+id/subjectName"
+            android:layout_marginLeft="22dp"
+            android:clickable="true"
+            android:onClick="activity_main"
+            android:text="@string/cancel_button" />
 
     </RelativeLayout>
 

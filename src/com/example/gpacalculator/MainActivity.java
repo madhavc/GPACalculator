@@ -10,24 +10,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.os.Build;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-	
+	Button add_course_button;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		init();
 	}
 	
 	public void onClick(View view){
 		Intent i;
-		if(view.getId() == R.id.addButton){
+		if(view.getId() == R.id.addCourse){
 			i = new Intent(this, AddCourseActivity.class);
 			startActivity(i);
 		}
 	}
+	private void init() {
+		add_course_button = (Button)findViewById(R.id.addCourse);
+		add_course_button.setOnClickListener(this);
+	}
+	
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
