@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.os.Build;
 
 public class MainActivity extends Activity implements View.OnClickListener{
@@ -21,6 +23,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		init();
+		
 	}
 	
 	public void onClick(View view){
@@ -29,12 +32,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
 			i = new Intent(this, AddCourseActivity.class);
 			startActivity(i);
 		}
+
 	}
 	private void init() {
 		add_course_button = (Button)findViewById(R.id.addCourse);
 		add_course_button.setOnClickListener(this);
 	}
 	
+	public void addItems(View view){
+		
+	}
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
